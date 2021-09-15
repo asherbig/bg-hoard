@@ -12,21 +12,21 @@ jobs:
       - run: npx run nx affected:test --base=origin/master --parallel # test the "store" project
   build-affected: # give our job an ID
     runs-on: ubuntu-latest # the image our job will run on
-    name: Test Affected # the name that will appear on the Actions UI
+    name: Build Affected # the name that will appear on the Actions UI
     steps: # what steps it will perform
       - uses: actions/checkout@v1 # checkout whatever branch the PR is using
       - uses: bahmutov/npm-install@v1 # trigger an `npm install`
       - run: npx run nx affected:build --base=origin/master --parallel # test the "store" project
   lint-affected: # give our job an ID
     runs-on: ubuntu-latest # the image our job will run on
-    name: Test Affected # the name that will appear on the Actions UI
+    name: Lint Affected # the name that will appear on the Actions UI
     steps: # what steps it will perform
       - uses: actions/checkout@v1 # checkout whatever branch the PR is using
       - uses: bahmutov/npm-install@v1 # trigger an `npm install`
       - run: npx run nx affected:lint --base=origin/master --parallel # test the "store" project
   e2e-affected: # give our job an ID
     runs-on: ubuntu-latest # the image our job will run on
-    name: Test Affected # the name that will appear on the Actions UI
+    name: e2e Affected # the name that will appear on the Actions UI
     steps: # what steps it will perform
       - uses: actions/checkout@v1 # checkout whatever branch the PR is using
       - uses: bahmutov/npm-install@v1 # trigger an `npm install`
