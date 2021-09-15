@@ -13,7 +13,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
@@ -21,7 +21,8 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "accessToken": "YjE2NTYxZmMtOTZiYS00NjFiLTlmNzMtMWUwYjk2ZTU2Y2VkfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -35,33 +36,64 @@
   },
   "projects": {
     "api": {
-      "tags": ["type:app", "scope:api"]
+      "tags": [
+        "type:app",
+        "scope:api"
+      ]
     },
     "api-util-notifications": {
-      "tags": ["type:util", "scope:api"]
+      "tags": [
+        "type:util",
+        "scope:api"
+      ]
     },
     "store": {
-      "tags": ["type:app", "scope:store"]
+      "tags": [
+        "type:app",
+        "scope:store"
+      ]
     },
     "store-e2e": {
-      "tags": ["type:app", "scope:store"],
-      "implicitDependencies": ["store"]
+      "tags": [
+        "type:app",
+        "scope:store"
+      ],
+      "implicitDependencies": [
+        "store"
+      ]
     },
     "store-feature-game-detail": {
-      "tags": ["type:feature", "scope:store"]
+      "tags": [
+        "type:feature",
+        "scope:store"
+      ]
     },
     "store-ui-shared": {
-      "tags": ["type:ui", "scope:store"]
+      "tags": [
+        "type:ui",
+        "scope:store"
+      ]
     },
     "store-ui-shared-e2e": {
-      "tags": ["type:ui", "scope:store"],
-      "implicitDependencies": ["store-ui-shared"]
+      "tags": [
+        "type:ui",
+        "scope:store"
+      ],
+      "implicitDependencies": [
+        "store-ui-shared"
+      ]
     },
     "store-util-formatters": {
-      "tags": ["type:util", "scope:store"]
+      "tags": [
+        "type:util",
+        "scope:store"
+      ]
     },
     "util-interface": {
-      "tags": ["type:util", "scope:shared"]
+      "tags": [
+        "type:util",
+        "scope:shared"
+      ]
     }
   }
 }
