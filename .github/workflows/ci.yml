@@ -1,33 +1,33 @@
-name: Run CI checks # The name will show up on the GitHub Actions dashboard
+name: Run CI checks
 
-on: [pull_request] # This workflow will run only on Pull Requests
+on: [pull_request]
 
 jobs:
-  test-affected: # give our job an ID
-    runs-on: ubuntu-latest # the image our job will run on
-    name: Test Affected # the name that will appear on the Actions UI
-    steps: # what steps it will perform
-      - uses: actions/checkout@v1 # checkout whatever branch the PR is using
-      - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-      - run: npx run nx affected:test --base=origin/master --parallel # test the "store" project
-  build-affected: # give our job an ID
-    runs-on: ubuntu-latest # the image our job will run on
-    name: Build Affected # the name that will appear on the Actions UI
-    steps: # what steps it will perform
-      - uses: actions/checkout@v1 # checkout whatever branch the PR is using
-      - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-      - run: npx run nx affected:build --base=origin/master --parallel # test the "store" project
-  lint-affected: # give our job an ID
-    runs-on: ubuntu-latest # the image our job will run on
-    name: Lint Affected # the name that will appear on the Actions UI
-    steps: # what steps it will perform
-      - uses: actions/checkout@v1 # checkout whatever branch the PR is using
-      - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-      - run: npx run nx affected:lint --base=origin/master --parallel # test the "store" project
-  e2e-affected: # give our job an ID
-    runs-on: ubuntu-latest # the image our job will run on
-    name: e2e Affected # the name that will appear on the Actions UI
-    steps: # what steps it will perform
-      - uses: actions/checkout@v1 # checkout whatever branch the PR is using
-      - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-      - run: npx run nx affected:e2e --base=origin/master --parallel # test the "store" project
+  test-affected:
+    runs-on: ubuntu-latest
+    name: Test Affected
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npx run nx affected:test -- --base=origin/master --parallel
+  build-affected:
+    runs-on: ubuntu-latest
+    name: Build Affected
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npx run nx affected:build -- --base=origin/master --parallel
+  lint-affected:
+    runs-on: ubuntu-latest
+    name: Lint Affected
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npx run nx affected:lint -- --base=origin/master --parallel
+  e2e-affected:
+    runs-on: ubuntu-latest
+    name: e2e Affected
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npx run nx affected:e2e -- --base=origin/master --parallel
